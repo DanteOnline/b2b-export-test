@@ -13,7 +13,11 @@
                             <p>{{object.description}}</p>
                         </div>
                         <div class="ratings">
-                            <p class="pull-right"></p>
+                            <p class="pull-right">
+                                {% if not object.in_stock %}
+                                    НЕТ В НАЛИЧИИ
+                                {% endif %}
+                            </p>
                             <p>
                                 {% for i in object.rating|times %}
                                     <span class="glyphicon glyphicon-star"></span>
