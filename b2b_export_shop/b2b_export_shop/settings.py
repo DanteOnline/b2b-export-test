@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'easy_thumbnails',
     'precise_bbcode',
     'goods',
-    'main'
+    'main',
+    'contacts'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -134,3 +135,8 @@ THUMBNAIL_ALIASES = {
         'base': {'size': (200, 200)},
     },
 }
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'borodaa@gmail.com'
+EMAIL_HOST_PASSWORD = 'PASSWORD'
