@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'easy_thumbnails',
     'precise_bbcode',
-    'goods'
+    'goods',
+    'main'
 ]
 
 MIDDLEWARE_CLASSES = [

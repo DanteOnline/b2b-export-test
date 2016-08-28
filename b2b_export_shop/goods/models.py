@@ -13,6 +13,7 @@ class Good(models.Model):
                                    verbose_name='Рекомендуемый')
     image = models.ImageField(upload_to='goods/list',
                               verbose_name='Основное изображение')
+    rating = models.PositiveIntegerField(default=0, verbose_name='Рейтинг')
 
     def __str__(self):
         return self.name
