@@ -1,32 +1,36 @@
 {% load myfilters %}
 <div class="row">
     <div class="col-md-9">
+        {% for object in object_list %}
         <div class="row">
-            {% for object in object_list %}
                 <div class="col-sm-4 col-lg-4 col-md-4">
                     <div class="thumbnail">
                         <img src="{{object.image.url}}" alt="{{object.image.description}}">
-                        <div class="caption">
+                    </div>
+                </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+                    <div class="caption">
                             <h4 class="pull-right">{{object.price}} руб.</h4>
                             <h4><a href="{% url "good" pk=object.pk %}">{{object.name}}</a>
                             </h4>
                             <p>{{object.description}}</p>
-                        </div>
-                        <div class="ratings">
-                            <p class="pull-right">
-                                {% if not object.in_stock %}
-                                    НЕТ В НАЛИЧИИ
-                                {% endif %}
-                            </p>
-                            <p>
-                                {% for i in object.rating|times %}
-                                    <span class="glyphicon glyphicon-star"></span>
-                                {% endfor %}
-                            </p>
-                        </div>
                     </div>
                 </div>
-            {% endfor %}
+                <div class="col-sm-4 col-lg-4 col-md-4">
+                    <div class="ratings">
+                        <p class="pull-right">
+                            {% if not object.in_stock %}
+                                НЕТ В НАЛИЧИИ
+                            {% endif %}
+                        </p>
+                        <p>
+                            {% for i in object.rating|times %}
+                                <span class="glyphicon glyphicon-star"></span>
+                            {% endfor %}
+                        </p>
+                    </div>
+                </div>
         </div>
+        {% endfor %}
     </div>
 </div>

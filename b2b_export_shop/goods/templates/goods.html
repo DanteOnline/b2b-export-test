@@ -4,5 +4,11 @@
 {% endblock %}
 {% block main %}
 <h1>Все телефоны</h1>
-{% include "generic/good_list.html" %}
+<a class="view {% if request.session.view == 'grid' %} view-active {% endif %}" data-v="grid" href="javascript:">Таблицей</a>
+<a class="view {% if request.session.view == 'list' %} view-active {% endif %}" data-v="list" href="javascript:">Списком</a>
+{% if request.session.view == 'grid' %}
+    {% include "generic/good_grid.html" %}
+{% else %}
+    {% include "generic/good_list.html" %}
+{% endif %}
 {% endblock %}
