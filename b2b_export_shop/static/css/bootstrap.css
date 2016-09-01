@@ -1417,6 +1417,11 @@ ol {
   margin-top: 0;
   margin-bottom: 10px;
 }
+
+li
+{
+list-style-type: none;
+}
 ul ul,
 ol ul,
 ul ol,

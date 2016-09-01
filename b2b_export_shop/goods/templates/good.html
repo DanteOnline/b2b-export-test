@@ -2,6 +2,39 @@
 {% block title %}
     {{object.name}}
 {% endblock %}
+{% load myfilters %}
 {% block main %}
 <h1>{{object.name}}</h1>
+
+<div class="row">
+    <div class="col-md-9">
+                <div class="col-sm-4 col-lg-4 col-md-4" style="width: {{images_size}}%">
+                    <div class="thumbnail">
+                        <img src="{{object.image.url}}" alt="{{object.description}}">
+                    </div>
+                </div>
+            {% for image in images %}
+                <div class="col-sm-4 col-lg-4 col-md-4" style="width: {{images_size}}%">
+                    <div class="thumbnail">
+                        <img src="{{image.image.url}}" alt="{{object.description}}">
+                    </div>
+                </div>
+            {% endfor %}
+    </div>
+    <div id="content">
+            {{object.content}}
+        </div>
+        <div class="ratings">
+            <p class="pull-right">
+                {% if not object.in_stock %}
+                    НЕТ В НАЛИЧИИ
+                {% endif %}
+            </p>
+            <p>
+                {% for i in object.rating|times %}
+                    <span class="glyphicon glyphicon-star"></span>
+                {% endfor %}
+            </p>
+        </div>
+</div>
 {% endblock %}

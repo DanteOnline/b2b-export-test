@@ -37,8 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'easy_thumbnails',
-    'precise_bbcode',
     'goods',
     'main',
     'contacts'
@@ -132,7 +130,10 @@ MEDIA_URL = '/media/'
 THUMBNAIL_BASEDIR = 'thumbnails'
 THUMBNAIL_ALIASES = {
     'goods.Good.image': {
-        'base': {'size': (200, 200)},
+        'base': {'size': (344, 344)},
+    },
+    'goods.GoodImage.image': {
+        'base': {'size': (344, 344)},
     },
 }
 

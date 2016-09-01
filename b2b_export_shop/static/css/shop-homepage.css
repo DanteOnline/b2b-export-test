@@ -34,6 +34,14 @@ body {
     width: 100%;
 }
 
+.thumbnail1 img {
+    width: 344px;
+}
+
+.thumbnail1 {
+    width: 350px;
+}
+
 .ratings {
     padding-right: 10px;
     padding-left: 10px;
@@ -58,3 +66,12 @@ footer {
     cursor: default;
     text-decoration: underline;
 }
+
+#scroll {
+    overflow: hidden;
+    height: 350px;
+}
+
+/*#scroll ul li {
+	display: inline-block;
+}*/
